@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/developer', [
-   dd(config('customkeys.developer'))
-]);
+//Route::get('/developer', [
+//   dd(config('customkeys.developer'))
+//]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

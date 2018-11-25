@@ -1,0 +1,36 @@
+First we habe to overwrite registred method,
+
+then define the action in this method,
+
+after this add a new event in EventServiceProvider
+
+in this eventer-provider add a new registered event with new App\Listners\SendWelcomeEmail
+
+e.g
+
+'Illuminate\Auth\Events\Registed' => [
+	'App\Listners\SendWelcomeEmail'
+]
+
+it will send welcome email to newly registed users
+
+make sure to run this command, php artisan event:generate
+
+now in this SendWelcomeEmail class, add send email function in handle method;
+
+e.g
+Mail::to($event->user)->send(new WelcomeToOurApp ($event->user));
+
+now run this command; php artisan make:mail WelcomeToOurApp --markdown="emails.welcome"
+
+in WelcomeToOurApp.php apply User model dependancy injection in constructor
+
+e.g
+User $user
+
+$this->user = $user
+
+also declair public property $user before construct
+
+now design the email.welcome.blade according to your interust
+

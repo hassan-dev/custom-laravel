@@ -6,6 +6,6 @@
  * Time: 12:01 PM
  */
 
-return [
-  'developer' => env('APP_DEV')
-];
+//return [
+//  'developer' => env('APP_DEV')
+//];
