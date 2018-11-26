@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $medium = resolve('medium-php-sdk');
+    dd($medium);
 });
 
 //Route::get('/developer', [
