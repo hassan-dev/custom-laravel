@@ -15,6 +15,10 @@ Route::get('/', function () {
     $medium = resolve('medium-php-sdk');
     dd($medium);
 });
+Route::get('/testing', function () {
+    $medium = resolve('medium-php-sdk');
+    dd($medium);
+});
 
 //Route::get('/developer', [
 //   dd(config('customkeys.developer'))
